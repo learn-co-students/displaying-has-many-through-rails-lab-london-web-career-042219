@@ -1,0 +1,11 @@
+<div class="container">
+  <br>
+  <h1 class="text-danger">Patients: </h1>
+  <br>
+  <ul>
+    <% @patients.each do |patient| %>
+    <li><%= link_to "Name: #{patient.name} Number of Appointments: #{patient.appointments_count}", patient_path(patient), :class => "text-info"%></li>
+    <% end %>
+  </ul>
+
+</div>
