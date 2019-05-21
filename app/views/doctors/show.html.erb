@@ -1,0 +1,15 @@
+<div class="container">
+  <br>
+  <h1 class="text-danger"><%= @doctor.name %></h1>
+  <br>
+  <h1 class="text-warning"> Department: <%= @doctor.department %></h1>
+  <br>
+  <h1 class="text-info"> Appointments: </h1>
+  <br>
+  <% @doctor.appointments.each do |app| %>
+  <% date = app.appointment_datetime %>
+  <ul>
+    <li><%= link_to "#{date.strftime("%B %-d, %Y")} at #{date.strftime("%H:%M")} - #{app.patient.name}", patient_path(app.patient), :class => "text-success"%></li>
+  </ul>
+  <% end %>
+</div>

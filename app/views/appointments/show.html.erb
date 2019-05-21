@@ -1,0 +1,10 @@
+<div class="container">
+  <br>
+  <h1 class="text-danger">Appointment Details: </h1>
+  <br>
+  <h2 class="text-warning"> <%= "#{@appointment.appointment_datetime.strftime("%B %-d, %Y")} at #{@appointment.appointment_datetime.strftime("%H:%M")}" %></h2>
+  <br>
+  <h3><%= link_to "Patient: #{@appointment.patient.name}", patient_path(@appointment.patient), :class=>"text-success" %></h3>
+  <br>
+  <h3><%= link_to "Doctor: #{@appointment.doctor.name}", doctor_path(@appointment.doctor), :class=>"text-success" %></h3>
+</div>
